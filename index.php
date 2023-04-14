@@ -42,9 +42,29 @@ echo $num1/$num2;
 echo "<br>";
 echo $num1%$num2;
 echo "<br>";
-
+echo "<hr>";
 // 指派運算字
 $name='大耳狗';
 ['name'=>'大耳狗'];
+echo "<hr>";
+// 三元運算子
+$socre=50;
+$level=($socre >= 60)?'及格':'不及格';
+echo $level;
+echo "<br>";
+$socre=70;
+$level=($socre >= 60)?'及格':'不及格';
+echo $level;
+echo "<br>";
+// 練習交換變數
+$a = 10;
+$b = 50;
+$tmp=$a;
+$a=$b;
+$b=$tmp;
+echo "<br>";
+echo $a;
+echo "<br>";
+echo $b;
 
 ?>
