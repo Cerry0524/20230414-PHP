@@ -42,4 +42,9 @@ echo $num1/$num2;
 echo "<br>";
 echo $num1%$num2;
 echo "<br>";
+
+// 指派運算字
+$name='大耳狗';
+['name'=>'大耳狗'];
+
 ?>
