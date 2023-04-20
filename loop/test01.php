@@ -41,12 +41,12 @@ echo "<br>";
 //菱形
 echo "菱形";
 echo "<br>";
-$f = 4;
+$f = 9;
 
-for ($x=0; $x < $f; $x++) { 
+for ($x=0; $x < $f/2; $x++) { 
     echo "&nbsp&nbsp&nbsp&nbsp";
        
-    for ($y=$x+1; $y < $f; $y++) { 
+    for ($y=$x+1; $y < $f/2; $y++) { 
         echo "&nbsp&nbsp";
     }     
     echo "*";
@@ -55,15 +55,14 @@ for ($x=0; $x < $f; $x++) {
     }
 echo "<br>";  
 }
-$f = 5;
-for ($x=0; $x < $f; $x++) { 
+for ($x=0; $x < $f/2+1; $x++) { 
     echo "&nbsp&nbsp";
        
     for ($y=0; $y < $x; $y++) { 
         echo "&nbsp&nbsp";
     }     
     echo "*";
-    for ($z=$x+1; $z < $f; $z++){
+    for ($z=$x+1; $z < $f/2+1; $z++){
         echo "**";
     }
 echo "<br>";  
@@ -118,34 +117,19 @@ for ($i=1; $i <= 7 ; $i++) {
 echo "挖空菱形";
 echo "<br>";
 
-$f = 4;
-
-for ($x=0; $x < $f; $x++) { 
-    echo "&nbsp&nbsp&nbsp&nbsp";
-       
-    for ($y=$x+1; $y < $f; $y++) { 
-        echo "&nbsp&nbsp";
-    }     
-    echo "*";
-    for ($z=0; $z < $x; $z++){
-        if($x == $y){
-            echo "*";
-        }else{
-          echo "&nbsp&nbsp";
-        }
-    }
-echo "<br>";  
-}
-$f = 5;
-for ($x=0; $x < $f; $x++) { 
+echo "<table>";
+$f = 11;
+for ($i=0; $i <= $f/2 ; $i++) { 
     echo "&nbsp&nbsp";
-       
-    for ($y=0; $y < $x; $y++) { 
-        echo "&nbsp&nbsp";
-    }     
-    echo "*";
-    for ($z=$x+1; $z < $f; $z++){
-        echo "**";
+    for ($j=0; $j <= $f/2 ; $j++){
+        echo "&nbsp&nbsp";        
+        if($i == 0 && $j == 0){
+            echo "&nbsp";                
+        }else if($j+$i<=10){
+            echo "&nbsp&nbsp";
+        }else{         
+            echo "*";
+        }
+        echo "<br>";    
     }
-echo "<br>";  
 }
