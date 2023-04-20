@@ -69,16 +69,83 @@ for ($x=0; $x < $f; $x++) {
 echo "<br>";  
 }
 
-//矩型
-echo "矩型";
+//矩型1
+echo "矩型1";
 echo "<br>";
 
-$f = 7;
-
-for($x=0; $x < $f; $x++){
-    echo "*";
+for ($i=1; $i <= 7 ; $i++) { 
+    
+    for ($j=1; $j <= 7; $j++) {
+        if ($i%6 == 1) {
+            echo "*";            
+        }else{           
+            if ($j%6 == 1) {
+                echo "*";            
+            }else{
+                echo "&nbsp&nbsp";
+            }
+        }
+    }
+    echo "<br>";
 }
+
+//矩型2
+echo "矩型2";
 echo "<br>";
-for ($y=0; $y < $f ; $y++) { 
+
+for ($i=1; $i <= 7 ; $i++) { 
+    
+    for ($j=1; $j <= 7; $j++) {
+        
+        if ($i%6 == 1) {
+            echo "*";            
+        }else{           
+            if ($j%6 == 1) {
+                echo "*";            
+            }else{
+                if ($i == $j or $i+$j == 8) {
+                    echo "*";                      
+                    }else{
+                        echo "&nbsp&nbsp";
+                    }
+            }
+        }
+    }
+    echo "<br>";
+}
+
+//挖空菱形
+echo "挖空菱形";
+echo "<br>";
+
+$f = 4;
+
+for ($x=0; $x < $f; $x++) { 
+    echo "&nbsp&nbsp&nbsp&nbsp";
+       
+    for ($y=$x+1; $y < $f; $y++) { 
+        echo "&nbsp&nbsp";
+    }     
     echo "*";
+    for ($z=0; $z < $x; $z++){
+        if($x == $y){
+            echo "*";
+        }else{
+          echo "&nbsp&nbsp";
+        }
+    }
+echo "<br>";  
+}
+$f = 5;
+for ($x=0; $x < $f; $x++) { 
+    echo "&nbsp&nbsp";
+       
+    for ($y=0; $y < $x; $y++) { 
+        echo "&nbsp&nbsp";
+    }     
+    echo "*";
+    for ($z=$x+1; $z < $f; $z++){
+        echo "**";
+    }
+echo "<br>";  
 }
