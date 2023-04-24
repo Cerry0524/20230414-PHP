@@ -1,40 +1,25 @@
 <?php
-$sky=["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
-$earth=["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+$baseyear=1024;
+$sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+$earth=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
 $skyearth=[];
-$j=0;
-for ($i=0; $i < 60; $i++) { 
-    
-    while($j < 60) { 
+$skyearth1=[];
 
-        $skyearth[]=[
-            "天干"=>$sky[$i%10],
-            "地支"=>$earth[$j%12]
-        ];
-        $j+=1;
-        if ($i%10==0) {
-            break;
-        }
-    }
+for($i=0;$i<60;$i++) {
+    $skyearth[]=[
+        "天干" => $sky[$i%10],
+        "地支" => $earth[$i%12]
+    ];
+    $skyearth1[]=$sky[$i%10].$earth[$i%12];
+    
+}
 
-;
-}
-    
-echo "<table>";
-foreach($skyearth as $i => $g){
-    
-    if ($i%10==0) {
-        echo "<tr>";
-    }
-    
-    foreach($g as $result){
-        echo "<td>";
-        echo $result;
-        echo "</td>";
-    }  
-    
-    if ($i%10==9) {
-        echo "<tr>";
-    }
-}
-echo "</table>";
+echo "<pre>";
+print_r($skyearth1);
+echo "</pre>";
+echo "<pre>";
+print_r($skyearth);
+echo "</pre>";
+
+$year=2099;
+echo $skyearth[($year-$baseyear)%60][($year-$baseyear)%60];

@@ -21,15 +21,23 @@ $n = 97;
 
 echo "<hr>";
 for($i=3;$i<=$n;$i++){
+
     $check=false;
+    // 檢查是否可被整除，預設不行
     for ($j=2 ; $j < $i ; $j++){
+
         if($i%$j==0){
+
          $check=true;
+        // 被整除了,修正$check變數為true
          break;
+        // 程式結束跳出
         }
     }
      
      if($check==false){
+        // 檢查$check變數如果沒被整除過
          echo $i . ",";     
+        //  印出$i
      }
 }
