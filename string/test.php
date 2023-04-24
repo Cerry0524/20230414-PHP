@@ -87,3 +87,4 @@ $homepage="學會PHP網頁程式設計，薪水會加倍，工作會好找";
 $keywd="<span class='keyword'>".$keyword."</span>";
 $keyword="程式設計";
 echo str_replace($keyword,$keywd,$homepage);
+
