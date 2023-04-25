@@ -66,15 +66,16 @@ for ($i=0; $i < $weeks ; $i++) {
     // 次算星期一週七天$j<7
     for ($j=0; $j < 7; $j++) { 
         
-        if($j==0 || $j==6){
+        echo ($j==0 || $j==6)?"<td class='weekend'>":"<td>";   
+        // if($j==0 || $j==6){
             
-            echo "<td class='weekend'>";
+        //     echo "<td class='weekend'>";
         
-        }else{
+        // }else{
 
-            echo "<td>";
+        //     echo "<td>";
 
-        }
+        // }
 
 
         // 再來判斷如何填入數字;
@@ -110,17 +111,19 @@ for ($i=0; $i < $weeks ; $i++) {
         // }
 
         // 成功縮減公式
-        if(($i==0  && $j < $firstDateWeek)||( $i==$weeks-1 && $j > $firstDateWeek) ){                         
+        // if(($i==0  && $j < $firstDateWeek)||( $i==$weeks-1 && $j > $firstDateWeek) ){                         
             
-                echo "&nbsp";
+        //         echo "&nbsp";
             
-            }else{
+        //     }else{
 
-                echo $j+$i*7-$firstWeekSpace;
+        //         echo $j+$i*7-$firstWeekSpace;
                 
-            }
+        //     }
     
-            echo "</td>";
+        //     echo "</td>";
+        // 縮減成三元運算式
+        echo (($i==0  && $j < $firstDateWeek)||( $i==$weeks-1 && $j > $firstDateWeek))?"&nbsp":($j+$i*7-$firstWeekSpace);
   
     }
     echo "</tr>";
