@@ -78,37 +78,50 @@ for ($i=0; $i < $weeks ; $i++) {
 
 
         // 再來判斷如何填入數字;
-        if($i==0){
+        // if($i==0){
             
-            // 第一行填入內容選擇
-            if ($j < $firstDateWeek) {
+        //     // 第一行填入內容選擇
+        //     if ($j < $firstDateWeek) {
                 
+        //         echo "&nbsp";
+                
+        //     }else{
+                
+        //         // $i跟$j關聯性是$j+$i*7-$week
+        //         echo $j+$i*7-$firstWeekSpace;
+                
+        //     }
+        // }else if($i==$weeks-1){
+            
+        //     // 最後一行填入內容選擇
+        //     if ($j > $firstDateWeek) {
+                
+        //         echo "&nbsp";
+                
+        //     }else{
+                
+        //         echo $j+$i*7-$firstWeekSpace;
+                
+        //     }
+        // }else{
+
+        //     echo $j+$i*7-$firstWeekSpace;
+
+        // }
+
+        // 成功縮減公式
+        if(($i==0  && $j < $firstDateWeek)||( $i==$weeks-1 && $j > $firstDateWeek) ){                         
+            
                 echo "&nbsp";
-                
+            
             }else{
-                
-                // $i跟$j關聯性是$j+$i*7-$week
+
                 echo $j+$i*7-$firstWeekSpace;
                 
             }
-        }else if($i==$weeks-1){
-            
-            // 最後一行填入內容選擇
-            if ($j > $firstDateWeek) {
-                
-                echo "&nbsp";
-                
-            }else{
-                
-                echo $j+$i*7-$firstWeekSpace;
-                
-            }
-        }else{
-
-            echo $j+$i*7-$firstWeekSpace;
-
-        }
-        echo "</td>";
+    
+            echo "</td>";
+  
     }
     echo "</tr>";
 }
