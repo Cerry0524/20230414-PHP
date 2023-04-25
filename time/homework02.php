@@ -66,15 +66,13 @@ for ($i=0; $i < $weeks ; $i++) {
     for ($j=0; $j < 7; $j++) {    
 
         echo "<div class='week day'>";
-        
         echo (($i==0  && $j < $firstDateWeek)||( $i==$weeks-1 && $j > $firstDateWeek))?"&nbsp":($j+$i*7-$firstWeekSpace);
-        
-        echo "</div>";    
+        echo "</div>";   
+         
     }
     echo "</div>";
 }
 echo "</div>";
-
 ?>
 
 
